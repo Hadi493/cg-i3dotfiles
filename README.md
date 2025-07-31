@@ -1,73 +1,104 @@
-# CG Dotfiles
+# CG's i3 Dotfiles
 
-A complete Linux desktop configuration featuring i3 window manager, Neovim, Polybar, Fish shell, and more. This setup provides a modern, efficient, and visually appealing development environment.
+**A complete, modern Linux desktop environment** built for developers and power users. This configuration combines the efficiency of i3 window manager with modern tools and beautiful aesthetics using the Catppuccin color scheme.
 
-## Preview
+![GitHub stars](https://img.shields.io/github/stars/cyber-green/cg-i3dotfiles?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/cyber-green/cg-i3dotfiles?style=flat-square)
+![Arch Linux](https://img.shields.io/badge/Arch-Linux-1793D1?style=flat-square&logo=arch-linux)
 
-My daily driver setup includes:
-- **Window Manager**: i3wm with custom keybindings
-- **Status Bar**: Polybar with custom modules
-- **Terminal**: Kitty with custom configuration
-- **Shell**: Fish with custom functions and aliases
-- **Editor**: Neovim with LSP, completion, and modern plugins
-- **Screen Lock**: i3lock with custom styling
+## What's Included
+
+| Component | Tool | Description |
+|-----------|------|-------------|
+| **Window Manager** | i3wm | Tiling window manager with custom keybindings |
+| **Status Bar** | Polybar | Modern status bar with system monitoring |
+| **Terminal** | Kitty | GPU-accelerated terminal with Catppuccin theme |
+| **Shell** | Fish | Smart shell with syntax highlighting and completions |
+| **Editor** | Neovim | Modern Vim with LSP, autocompletion, and plugins |
+| **App Launcher** | dmenu | Fast application launcher |
+| **Screenshots** | Flameshot | Feature-rich screenshot tool |
+| **Screen Lock** | i3lock | Secure screen locking |
 
 ## Features
 
 ### i3 Window Manager
-- Custom keybindings for productivity
-- Automatic workspace management
-- Screen lock integration
-- Screenshot functionality with Flameshot
-- Volume and brightness controls
+- **Tiling Management**: Efficient window management with no wasted space
+- **Custom Keybindings**: Optimized shortcuts for maximum productivity
+- **10 Workspaces**: Numbered workspaces with smart switching
+- **Screenshot Integration**: Flameshot GUI and fullscreen capture shortcuts
+- **Audio Controls**: Hardware key support for volume and mute
+- **Screen Lock**: i3lock integration with custom styling
+- **Polybar Integration**: Automatic status bar launching
 
-### Polybar
-- Custom modules for system monitoring
-- CPU, memory, disk usage
-- Audio controls and microphone status
-- Network information
-- Date and time display
-- Workspace indicators
+### Polybar Status Bar
+- **Catppuccin Theme**: Beautiful mocha color scheme matching other components
+- **System Monitoring**: Real-time CPU and memory usage display
+- **Audio Management**: Volume control and microphone input monitoring
+- **Battery Status**: Charging/discharging indicators with percentage
+- **Workspace Indicators**: Visual feedback for i3 workspaces
+- **Date/Time Display**: Formatted time with seconds and full date
+- **System Tray**: Native system tray support
+- **Click Actions**: Interactive modules for microphone control
 
-### Neovim Configuration
-- Complete LSP setup with Mason
-- Advanced autocompletion with nvim-cmp
-- File explorer with nvim-tree
-- Fuzzy finding with fzf-lua
-- Git integration with gitsigns
-- Multiple color schemes
-- Optimized for speed and productivity
+### Kitty Terminal
+- **GPU Acceleration**: Fast rendering with modern OpenGL features
+- **Catppuccin Mocha**: Consistent color scheme across all tools
+- **JetBrains Mono Nerd Font**: Beautiful programming font with icon support
+- **Advanced Features**: Ligatures, cursor customization, and performance tuning
+- **Custom Keybindings**: Efficient tab and window management
+- **Shell Integration**: Perfect Fish shell compatibility
 
-### Fish Shell
-- Custom functions and aliases
-- Enhanced command completion
-- Colorful prompt and syntax highlighting
-- Productivity shortcuts
+### Fish Shell Configuration
+- **Smart Autocompletion**: Intelligent command and path suggestions
+- **Syntax Highlighting**: Real-time command validation and coloring
+- **Custom Prompt**: Git integration with branch and status indicators
+- **Comprehensive Aliases**: Git, system, development, and package manager shortcuts
+- **Utility Functions**: Extract archives, backup files, clipboard operations
+- **Development Tools**: Python, Docker, and Node.js optimizations
 
-### Additional Tools
-- Kitty terminal configuration
-- i3lock custom lock screen
-- Flameshot for screenshots
-- Various utility scripts
+### Neovim Setup
+- **Modern Configuration**: Lua-based configuration with lazy loading
+- **LSP Integration**: Complete language server support
+- **Advanced Plugins**: File tree, fuzzy finder, Git integration, and more
+- **Multiple Themes**: Catppuccin and other modern color schemes
+- **Productivity Features**: Auto-completion, syntax highlighting, and terminal integration
 
-## Quick Start
+## Quick Installation
+
+Get your environment set up in minutes with the automated setup script:
+
+```bash
+# Clone the repository
+git clone https://github.com/cyber-green/cg-i3dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Run the automated setup script
+./set-up.sh
+```
+
+## Manual Installation
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Ensure these packages are installed on your system:
 
+**Arch Linux:**
 ```bash
-# Arch Linux
-sudo pacman -S i3-wm polybar neovim fish kitty flameshot i3lock-color git curl ripgrep nodejs npm
-
-# Ubuntu/Debian
-sudo apt install i3 polybar neovim fish kitty flameshot i3lock git curl ripgrep nodejs npm
-
-# Fedora
-sudo dnf install i3 polybar neovim fish kitty flameshot i3lock git curl ripgrep nodejs npm
+sudo pacman -S i3-wm polybar neovim fish kitty flameshot i3lock-color git curl ripgrep nodejs npm stow
 ```
 
-### Installation
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install i3 polybar neovim fish kitty flameshot i3lock git curl ripgrep nodejs npm stow
+```
+
+**Fedora:**
+```bash
+sudo dnf install i3 polybar neovim fish kitty flameshot i3lock git curl ripgrep nodejs npm stow
+```
+
+### Installation Steps
 
 #### Method 1: Using GNU Stow (Recommended)
 
@@ -180,12 +211,21 @@ fish
 - `Super + Shift + s` - Screenshot (Flameshot GUI)
 - `Super + Shift + a` - Full screen screenshot
 - `Super + Ctrl + l` - Lock screen
+- `Super + Shift + x` - Lock screen (alternative)
 - `Super + Shift + e` - Exit i3
+- `Super + Shift + c` - Reload i3 configuration
+- `Super + Shift + r` - Restart i3
+
+#### Polybar Controls
+- `Super + Shift + p` - Toggle polybar visibility
+- `Super + Ctrl + p` - Start polybar
+- `Super + Alt + p` - Kill polybar
 
 #### Audio Controls
-- `XF86AudioRaiseVolume` - Volume up
-- `XF86AudioLowerVolume` - Volume down
-- `XF86AudioMute` - Mute toggle
+- `XF86AudioRaiseVolume` - Volume up (+10%)
+- `XF86AudioLowerVolume` - Volume down (-10%)
+- `XF86AudioMute` - Toggle volume mute
+- `XF86AudioMicMute` - Toggle microphone mute
 
 ### Polybar Modules
 
@@ -227,28 +267,36 @@ fish
 ## File Structure
 
 ```
-~/dotfiles/
-├── config/
-│   ├── i3/
-│   │   └── config              # i3 window manager configuration
-│   ├── polybar/
-│   │   ├── config.ini          # Polybar configuration
-│   │   ├── launch_polybar.sh   # Polybar startup script
-│   │   ├── toggle_polybar.sh   # Toggle polybar
-│   │   └── *.sh               # Various polybar scripts
-│   ├── nvim/                   # Complete Neovim configuration
-│   │   ├── init.lua           # Main config file
-│   │   └── lua/               # Lua configuration modules
-│   ├── fish/
-│   │   ├── config.fish        # Fish shell configuration
-│   │   └── functions/         # Custom fish functions
-│   ├── kitty/
-│   │   └── kitty.conf         # Kitty terminal configuration
-│   └── i3lock/
-│       └── lock-simple.sh     # Screen lock script
-├── scripts/                    # Utility scripts
-├── README.md                   # This file
-└── install.sh                  # Installation script
+cg-i3dotfiles/
+├── i3/
+│   └── .config/
+│       └── i3/
+│           └── config          # i3 window manager configuration
+├── polybar/
+│   └── .config/
+│       └── polybar/
+│           ├── config.ini      # Polybar configuration
+│           ├── launch_polybar.sh
+│           ├── toggle_polybar.sh
+│           ├── mic-input.sh    # Microphone input script
+│           └── *.sh           # Various utility scripts
+├── nvim/
+│   └── .config/
+│       └── nvim/              # Complete Neovim configuration
+│           ├── init.lua       # Main config file
+│           └── lua/           # Lua configuration modules
+├── fish/
+│   └── .config/
+│       └── fish/
+│           └── config.fish    # Fish shell configuration
+├── kitty/
+│   └── .config/
+│       └── kitty/
+│           └── kitty.conf     # Kitty terminal configuration
+├── README.md                   # This documentation
+├── install.sh                  # Original installation script
+├── set-up.sh                   # New automated setup script
+└── LICENSE                     # MIT License
 ```
 
 ## Related Repositories
