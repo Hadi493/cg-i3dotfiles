@@ -16,7 +16,6 @@ set $menu --no-startup-id qdbus6 org.kde.krunner /App display
 bindsym $mod+s exec $menu
 
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/Balcony-ja.png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -27,6 +26,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/Balcony-ja.png
 #font pango:DejaVu Sans Mono 8
 
 font pango:Iosevka 0
+
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -132,7 +132,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/dark-city.jpg
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -178,7 +178,8 @@ bindsym $mod+Shift+h exec "~/.screenlayout/home-setup.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
 bindsym $mod+Shift+w exec "~/bin/map-wacom"
 bindsym $mod+b exec "boomer"
-bindsym --release $mod+Shift+l exec "slock"
+bindsym --release $mod+Shift+l exec ~/.config/i3lock/lock-simple.sh
+bindsym $mod+Shift+s exec flameshot gui
 
 focus_follows_mouse no
 

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e  # exit on error
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "Installing dotfiles version: $(cat $DOTFILES_DIR/VERSION)"
+
+# i3 config
+echo "🔗 Linking i3 config..."
+mkdir -p ~/.config/i3
+ln -sf "$DOTFILES_DIR/config/i3/config" ~/.config/i3/config
+
+# polybar config
+echo "🔗 Linking polybar config..."
+mkdir -p ~/.config/polybar
+ln -sf "$DOTFILES_DIR/config/polybar/"* ~/.config/polybar/
+
+echo "✅ Done."
+
