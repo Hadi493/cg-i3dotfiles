@@ -16,5 +16,10 @@ echo "🔗 Linking polybar config..."
 mkdir -p ~/.config/polybar
 ln -sf "$DOTFILES_DIR/config/polybar/"* ~/.config/polybar/
 
-echo "✅ Done."
+# nvim config
+echo "🔗 Linking Neovim config..."
+mkdir -p ~/.config/nvim
+ln -sf "$DOTFILES_DIR/config/nvim/"* ~/.config/nvim/
+
+echo "✅ All configs linked."
 
