@@ -13,7 +13,7 @@ set $mod Mod4
 
 
 set $menu --no-startup-id qdbus6 org.kde.krunner /App display
-bindsym $mod+s exec $menu
+bindsym Print exec flameshot gui
 
 
 
@@ -46,7 +46,7 @@ bindsym $mod+z exec zen-browser
 bindsym $mod+Shift+d exec vesktop
 
 # scrot
-bindsym --release $mod+s exec "scrot -s"
+bindsym --release $mod+s exec 
 
 # kill focused window
 bindsym $mod+q kill
@@ -134,6 +134,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/dark-city.jpg
 
+
+exec_always --no-startup-id dunst &
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -179,7 +182,6 @@ bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
 bindsym $mod+Shift+w exec "~/bin/map-wacom"
 bindsym $mod+b exec "boomer"
 bindsym --release $mod+Shift+l exec ~/.config/i3lock/lock-simple.sh
-bindsym $mod+Shift+s exec flameshot gui
 
 focus_follows_mouse no
 
