@@ -16,6 +16,12 @@ echo "🔗 Linking polybar config..."
 mkdir -p ~/.config/polybar
 ln -sf "$DOTFILES_DIR/config/polybar/"* ~/.config/polybar/
 
+# i3lock config
+echo "🔗 Linking polybar config..."
+mkdir -p ~/.config/i3lock
+ln -sf "$DOTFILES_DIR/config/i3lock/"* ~/.config/i3lock/
+
+
 # nvim config
 echo "🔗 Linking Neovim config..."
 mkdir -p ~/.config/nvim
