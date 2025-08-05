@@ -1,27 +1,334 @@
 #!/bin/bash
 
-set -e  # exit on error
+# Tested on Arch Linux
 
-# i3 config
-echo "🔗 Linking i3 config..."
-mkdir -p ~/.config/i3
-ln -sf "$HOME/cg-i3dotfiles/config/i3/config" ~/.config/i3/config
+set -e  # Exit on any error
 
-# polybar config
-echo "🔗 Linking polybar config..."
-mkdir -p ~/.config/polybar
-ln -sf "$HOME/cg-i3dotfiles/config/polybar/"* ~/.config/polybar/
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-# i3lock config
-echo "🔗 Linking i3lock config..."
-mkdir -p ~/.config/i3lock
-ln -sf "$HOME/cg-i3dotfiles/config/i3lock/"* ~/.config/i3lock/
+# Logging functions
+log_info() { echo -e "${BLUE}[INFO]${NC} $1"; }
+log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+log_warning() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
+log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
-# nvim config
-echo "🔗 Linking Neovim config..."
-mkdir -p ~/.config/nvim
-# Remove existing nvim config to avoid conflicts
-rm -rf ~/.config/nvim/*
-ln -sf "$HOME/cg-i3dotfiles/config/nvim/"* ~/.config/nvim/
+# Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_DIR="$HOME/.config"
+BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
 
-echo "✅ All configs linked."
+# Check if running on Arch Linux
+check_arch_linux() {
+    if ! command -v pacman &> /dev/null; then
+        log_error "This script is designed for Arch Linux. Pacman not found."
+        exit 1
+    fi
+    log_success "Arch Linux detected"
+}
+
+# Check if AUR helper is available
+check_aur_helper() {
+    if command -v yay &> /dev/null; then
+        AUR_HELPER="yay"
+    elif command -v paru &> /dev/null; then
+        AUR_HELPER="paru"
+    else
+        log_warning "No AUR helper found. Installing yay..."
+        install_yay
+    fi
+    log_success "AUR helper available: $AUR_HELPER"
+}
+
+# Install yay AUR helper
+install_yay() {
+    if ! command -v git &> /dev/null; then
+        log_info "Installing git first..."
+        sudo pacman -S --noconfirm git
+    fi
+    
+    cd /tmp
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd "$SCRIPT_DIR"
+    AUR_HELPER="yay"
+}
+
+# Backup existing configurations
+backup_configs() {
+    log_info "Creating backup of existing configurations..."
+    mkdir -p "$BACKUP_DIR"
+    
+    # List of configs to backup
+    configs_to_backup=("i3" "polybar" "nvim" "rofi" "dunst" "picom" "alacritty" "kitty")
+    
+    for config in "${configs_to_backup[@]}"; do
+        if [ -d "$CONFIG_DIR/$config" ]; then
+            log_info "Backing up $config configuration..."
+            cp -r "$CONFIG_DIR/$config" "$BACKUP_DIR/"
+        fi
+    done
+    
+    log_success "Backup created at $BACKUP_DIR"
+}
+
+# Update system
+update_system() {
+    log_info "Updating system packages..."
+    sudo pacman -Syu --noconfirm
+    log_success "System updated"
+}
+
+# Install core packages
+install_core_packages() {
+    log_info "Installing core packages..."
+    
+    # Core system packages
+    local core_packages=(
+        "i3-wm"              # Window manager
+        "polybar"            # Status bar
+        "rofi"               # Application launcher
+        "dunst"              # Notification daemon
+        "picom"              # Compositor
+        "alacritty"          # Terminal emulator
+        "neovim"             # Text editor
+        "git"                # Version control
+        "feh"                # Image viewer/wallpaper
+        "maim"               # Screenshot tool
+        "xclip"              # Clipboard utility
+        "pulseaudio"         # Audio system
+        "pulseaudio-alsa"    # ALSA integration
+        "pavucontrol"        # Audio control GUI
+        "network-manager"    # Network management
+        "nm-connection-editor" # Network GUI
+        "base-devel"         # Build essentials
+        "nodejs"             # Node.js runtime
+        "npm"                # Node package manager
+        "python"             # Python 3
+        "python-pip"         # Python package installer
+        "cmake"              # Build system
+        "make"               # Build automation
+        "gcc"                # Compiler
+        "xorg-xrandr"        # Display configuration
+        "xorg-xdpyinfo"      # Display info
+        "brightnessctl"      # Brightness control
+        "playerctl"          # Media player control
+    )
+    
+    for package in "${core_packages[@]}"; do
+        if ! pacman -Qi "$package" &> /dev/null; then
+            log_info "Installing $package..."
+            sudo pacman -S --noconfirm "$package"
+        else
+            log_info "$package already installed"
+        fi
+    done
+    
+    log_success "Core packages installed"
+}
+
+# Install fonts
+install_fonts() {
+    log_info "Installing fonts..."
+    
+    local font_packages=(
+        "ttf-font-awesome"       # Icon font
+        "ttf-dejavu"            # System fonts
+        "noto-fonts"            # Unicode support
+        "noto-fonts-emoji"      # Emoji support
+        "ttf-liberation"        # Microsoft fonts alternative
+        "ttf-roboto"            # Modern font
+    )
+    
+    for font in "${font_packages[@]}"; do
+        if ! pacman -Qi "$font" &> /dev/null; then
+            sudo pacman -S --noconfirm "$font"
+        fi
+    done
+    
+    log_success "Fonts installed"
+}
+
+# Install AUR packages
+install_aur_packages() {
+    log_info "Installing AUR packages..."
+    
+    local aur_packages=(
+        "nerd-fonts-jetbrains-mono"  # Programming font
+        "i3lock-color"               # Enhanced lock screen
+        "polybar-git"                # Latest polybar features
+        "betterlockscreen"           # Lock screen utility
+    )
+    
+    for package in "${aur_packages[@]}"; do
+        if ! pacman -Qi "$package" &> /dev/null; then
+            log_info "Installing $package from AUR..."
+            $AUR_HELPER -S --noconfirm "$package"
+        else
+            log_info "$package already installed"
+        fi
+    done
+    
+    log_success "AUR packages installed"
+}
+
+# Install Python dependencies
+install_python_deps() {
+    log_info "Installing Python dependencies..."
+    pip install --user --upgrade pip
+    pip install --user pynvim neovim-remote
+    log_success "Python dependencies installed"
+}
+
+# Install Node.js dependencies
+install_nodejs_deps() {
+    log_info "Installing Node.js dependencies..."
+    sudo npm install -g neovim tree-sitter-cli
+    log_success "Node.js dependencies installed"
+}
+
+# Install configurations
+install_configurations() {
+    log_info "Installing configurations..."
+    
+    # Create config directory if it doesn't exist
+    mkdir -p "$CONFIG_DIR"
+    
+    # Copy configuration files
+    if [ -d "$SCRIPT_DIR/config" ]; then
+        log_info "Copying configuration files..."
+        
+        # Copy each config directory
+        for config_dir in "$SCRIPT_DIR/config"/*; do
+            if [ -d "$config_dir" ]; then
+                config_name=$(basename "$config_dir")
+                log_info "Installing $config_name configuration..."
+                
+                # Remove existing config if present
+                [ -d "$CONFIG_DIR/$config_name" ] && rm -rf "$CONFIG_DIR/$config_name"
+                
+                # Copy new config
+                cp -r "$config_dir" "$CONFIG_DIR/"
+                
+                # Make scripts executable
+                find "$CONFIG_DIR/$config_name" -name "*.sh" -exec chmod +x {} \;
+            fi
+        done
+    else
+        log_error "Configuration directory not found at $SCRIPT_DIR/config"
+        exit 1
+    fi
+    
+    log_success "Configurations installed"
+}
+
+# Set up wallpapers directory
+setup_wallpapers() {
+    log_info "Setting up wallpapers directory..."
+    mkdir -p "$HOME/Pictures/wallpapers"
+    
+    # Copy wallpapers if they exist
+    if [ -d "$SCRIPT_DIR/wallpapers" ]; then
+        cp -r "$SCRIPT_DIR/wallpapers"/* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
+    fi
+    
+    log_success "Wallpapers directory set up"
+}
+
+# Configure services
+configure_services() {
+    log_info "Configuring system services..."
+    
+    # Enable NetworkManager
+    sudo systemctl enable NetworkManager
+    sudo systemctl start NetworkManager
+    
+    # Add user to audio group
+    sudo usermod -a -G audio "$USER"
+    
+    log_success "Services configured"
+}
+
+# Post-installation setup
+post_install_setup() {
+    log_info "Performing post-installation setup..."
+    
+    # Rebuild font cache
+    log_info "Rebuilding font cache..."
+    fc-cache -fv
+    
+    # Create directories that might be needed
+    mkdir -p "$HOME/.local/bin"
+    mkdir -p "$HOME/.local/share/applications"
+    
+    # Set up Neovim
+    if command -v nvim &> /dev/null; then
+        log_info "Setting up Neovim plugins..."
+        # This will be handled by the user on first run
+        log_warning "Run 'nvim' and install plugins using your plugin manager"
+    fi
+    
+    log_success "Post-installation setup complete"
+}
+
+# Display completion message
+completion_message() {
+    log_success "Installation completed successfully!"
+    echo
+    log_info "Next steps:"
+    echo "  1. Log out and back in (or reboot) to apply group changes"
+    echo "  2. Start i3: startx (if not using a display manager)"
+    echo "  3. Reload i3 configuration: Super/Mod + Shift + r"
+    echo "  4. Open Neovim and install plugins"
+    echo "  5. Configure wallpapers in ~/Pictures/wallpapers/"
+    echo "  6. Customize configurations in ~/.config/"
+    echo
+    log_info "Backup of previous configs: $BACKUP_DIR"
+    echo
+    log_warning "If you encounter issues, check the logs and troubleshoot accordingly"
+}
+
+# Error handling
+trap 'log_error "Installation failed at line $LINENO"' ERR
+
+# Main installation flow
+main() {
+    echo "========================================"
+    echo "  CG-i3dotfiles Installation Script"
+    echo "========================================"
+    echo
+    
+    # Pre-flight checks
+    check_arch_linux
+    check_aur_helper
+    
+    # Confirm installation
+    read -p "This will install a complete i3wm setup. Continue? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        log_info "Installation cancelled"
+        exit 0
+    fi
+    
+    # Installation steps
+    backup_configs
+    update_system
+    install_core_packages
+    install_fonts
+    install_aur_packages
+    install_python_deps
+    install_nodejs_deps
+    install_configurations
+    setup_wallpapers
+    configure_services
+    post_install_setup
+    completion_message
+}
+
+# Run main function
+main "$@"
