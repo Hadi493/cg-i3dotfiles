@@ -14,3 +14,5 @@ git clone https://github.com/cyber-green/cg-i3dotfiles.git
 cd ~/cg-i3dotfiles
 chmod +x install
 ./install
+```
+Reload i3 <Super/Mod+Shift+r>
