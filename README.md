@@ -10,7 +10,7 @@ Personal configuration files for:
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+git clone https://github.com/cyber-green/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install
 ./install
