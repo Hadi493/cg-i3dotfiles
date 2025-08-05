@@ -2,9 +2,9 @@
 
 Personal configuration files for:
 - [i3 Window Manager](https://i3wm.org/)
-- [Polybar](https://github.com/polybar/polybar)
-- [Neovim](https://neovim.io/)
-- [i3lock](https://i3wm.org/i3lock/)
+- [Polybar](https://github.com/Hadi493/cg-polybar/)
+- [Neovim](https://github.com/cyber-green/cg-nvim/)
+- [i3lock](https://github.com/Hadi493/cg-i3lock/)
 
 ## Installation
 
@@ -36,4 +36,4 @@ This configuration is tailored for advanced users. Please review the configs bef
 - **i3**: Customized window manager setup
 - **Polybar**: Beautiful status bar with custom modules
 - **Neovim**: Full IDE-like setup with LSP, plugins, and themes
-- **i3lock**: Enhanced lock screen with custom simple none themes
+- **i3lock**: Enhanced lock screen with custom simple themes
