@@ -2,30 +2,26 @@
 
 set -e  # exit on error
 
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-echo "Installing dotfiles version: $(cat $DOTFILES_DIR/VERSION)"
-
 # i3 config
 echo "🔗 Linking i3 config..."
 mkdir -p ~/.config/i3
-ln -sf "$DOTFILES_DIR/config/i3/config" ~/.config/i3/config
+ln -sf "$HOME/cg-i3dotfiles/config/i3/config" ~/.config/i3/config
 
 # polybar config
 echo "🔗 Linking polybar config..."
 mkdir -p ~/.config/polybar
-ln -sf "$DOTFILES_DIR/config/polybar/"* ~/.config/polybar/
+ln -sf "$HOME/cg-i3dotfiles/config/polybar/"* ~/.config/polybar/
 
 # i3lock config
-echo "🔗 Linking polybar config..."
+echo "🔗 Linking i3lock config..."
 mkdir -p ~/.config/i3lock
-ln -sf "$DOTFILES_DIR/config/i3lock/"* ~/.config/i3lock/
-
+ln -sf "$HOME/cg-i3dotfiles/config/i3lock/"* ~/.config/i3lock/
 
 # nvim config
 echo "🔗 Linking Neovim config..."
 mkdir -p ~/.config/nvim
-ln -sf "$DOTFILES_DIR/config/nvim/"* ~/.config/nvim/
+# Remove existing nvim config to avoid conflicts
+rm -rf ~/.config/nvim/*
+ln -sf "$HOME/cg-i3dotfiles/config/nvim/"* ~/.config/nvim/
 
 echo "✅ All configs linked."
-
