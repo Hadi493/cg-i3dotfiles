@@ -247,10 +247,10 @@ cg-i3dotfiles/
 
 ## Notes
 
-- This configuration is optimized for Arch-based systems but works on most Linux distributions
+- This configuration is optimized for Arch-based systems but works on majority Linux distributions
 - Fish shell aliases include Arch-specific package management commands
 - Intel GPU monitoring requires Intel graphics hardware and intel-gpu-tools
-- Some applications (zen-browser, vesktop) are optional and referenced in keybindings
+- Some applications (zen-browser, vesktop) are optional and referred in keybindings
 - The configuration assumes a wallpaper at `~/Pictures/Wallpapers/dark-city.jpg`
 
 ## License
