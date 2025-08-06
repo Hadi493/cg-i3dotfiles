@@ -17,11 +17,17 @@ echo "🔗 Linking i3lock config..."
 mkdir -p ~/.config/i3lock
 ln -sf "$HOME/cg-i3dotfiles/config/i3lock/"* ~/.config/i3lock/
 
+# fish config
+echo "🔗 Linking fish config..."
+mkdir -p ~/.config/fish
+ln -sf "$HOME/cg-i3dotfiles/config/fish/"* ~/.config/fish
+
 # nvim config
 echo "🔗 Linking Neovim config..."
 mkdir -p ~/.config/nvim
 # Remove existing nvim config to avoid conflicts
 rm -rf ~/.config/nvim/*
+rm -rf ~/.local/share/nvim/*
 ln -sf "$HOME/cg-i3dotfiles/config/nvim/"* ~/.config/nvim/
 
 echo "✅ All configs linked."
