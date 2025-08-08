@@ -1,0 +1,110 @@
+/* Catppuccin Mocha Theme for Wofi */
+* {
+    font-family: "Iosevka Nerd Font Mono";
+    font-size: 14px;
+}
+
+/* Window */
+window {
+    margin: 0px;
+    padding: 10px;
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    background-color: #1e1e2e;
+    animation: slideIn 200ms ease-in-out both;
+}
+
+/* Outer Box */
+#outer-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Input */
+#input {
+    margin: 5px 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    color: #cdd6f4;
+    background-color: #313244;
+    outline: none;
+    border: 1px solid #45475a;
+}
+
+#input:focus {
+    border: 1px solid #cba6f7;
+    margin: 5px 20px;
+    padding: 10px;
+}
+
+/* Inner Box */
+#inner-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Scroll */
+#scroll {
+    margin: 0px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Text */
+#text {
+    margin: 5px;
+    border: none;
+    color: #cdd6f4;
+    animation: none;
+}
+
+#text:selected {
+    color: #11111b;
+}
+
+/* Entry */
+#entry {
+    margin: 0px 0px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    border: none;
+    border-radius: 8px;
+    background-color: #cba6f7;
+}
+
+#entry:selected #text {
+    color: #11111b;
+}
+
+#entry:selected #img {
+    background-color: #cba6f7;
+}
+
+/* Image */
+#img {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
