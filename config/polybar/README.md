@@ -2,13 +2,14 @@
 
 A clean and modern polybar configuration.
 
-![Screenshot](./cg-polybarv1.3.1.png)
+![Screenshot](./cg-polybarv1.3.2.png)
+
 
 
 ## Features
 
 - **Workspace indicator:** Shows the current workspace and allows you to switch between them.
-- **Window title:** Displays the title of the currently active window.
+- **Window title:** Displays the title of the current active window.
 - **Microphone status:** Shows the current microphone volume and mute status.
 - **Audio control:** Shows the current volume level and allows you to mute/unmute.
 - **System monitoring:** Displays CPU and RAM usage.
@@ -30,7 +31,7 @@ A clean and modern polybar configuration.
     Open your terminal and clone the repository to your local machine:
     
     ```bash
-    git clone https://github.com/your-username/cg-polybar.git
+    git clone https://github.com/Hadi493/cg-polybar.git
     cd cg-polybar
     ```
     
@@ -45,7 +46,7 @@ A clean and modern polybar configuration.
     
 3.  **Set Script Permissions**
     
-    The launch and microphone scripts require execute permissions to run.
+    The launch and microphone scripts require executory permissions to run.
     
     ```bash
     chmod +x ~/.config/polybar/launch_polybar.sh
