@@ -1,95 +1,184 @@
-# CG Dotfiles
+<div align="center">
 
-A complete, unified desktop environment configuration for Linux featuring i3 window manager, Polybar status bar, Neovim text editor, i3lock screen locker, and Fish shell. All components are configured with a consistent Catppuccin Mocha theme for a cohesive visual experience.
+# CG i3 Dotfiles
 
-## Components
+*A complete, unified desktop environment for productivity enthusiasts*
 
-- **i3 Window Manager** - Tiling window manager with logical keybindings
-- **Polybar** - Modern status bar with interactive modules
-- **Neovim** - Full-featured IDE setup with LSP support
-- **i3lock** - Customizable screen locker with advanced themes
-- **Fish Shell** - Enhanced shell with custom prompt and utilities
+[![GitHub Stars](https://img.shields.io/github/stars/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/network)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-linux-blue?style=for-the-badge&logo=linux)]()
+
+[Features](#features) • [Screenshots](#screenshots) • [Installation](#installation) • [Configuration](#configuration) • [Keybindings](#keybindings)
+
+</div>
+
+---
+
+## Overview
+
+A carefully crafted desktop environment configuration for Linux featuring i3 window manager, Polybar status bar, Neovim editor, i3lock screen locker, and Fish shell. All components work together with a consistent **Catppuccin Mocha** theme for a cohesive and productive workflow.
+
+## Screenshots
+
+<details>
+<summary>Polybar & Desktop</summary>
+<img src="config/polybar/cg-polybarv1.3.2.png" alt="Polybar Screenshot">
+</details>
+
+<details>
+<summary>Fish Shell</summary>
+<img src="config/fish/cg-fish.png" alt="Fish Shell Screenshot">
+</details>
 
 ## Features
 
-### Visual Design
-- Consistent Catppuccin Mocha theme across all components
-- Iosevka Nerd Font for clean typography and icons
-- Advanced i3lock themes with blur effects and custom backgrounds
-- Two-line fish prompt with git status and system information
+<details>
+<summary><b>Visual Design</b></summary>
 
-### Productivity Features
-- **i3**: Intuitive keybindings, multi-monitor support, auto-launching of essential services
-- **Polybar**: Interactive modules for notifications, audio control, system monitoring
-- **Neovim**: Optimized startup time, LSP integration, fuzzy finding, file explorer
-- **Fish**: 100+ useful aliases, helper functions, smart command completion
+- **Consistent theming** with Catppuccin Mocha across all components
+- **Iosevka Nerd Font** for clean typography and rich icon support
+- **Advanced i3lock themes** with blur effects and custom backgrounds
+- **Two-line Fish prompt** with Git status and system information
+- **Smooth animations** and transitions where supported
 
-### System Integration
-- Real-time system monitoring (CPU, memory, GPU, battery, network)
-- Interactive notification control via Dunst
-- Clickable audio controls with volume adjustment
-- Git integration in both shell prompt and editor
-- Extract utility supporting multiple archive formats
+</details>
+
+<details>
+<summary><b>Productivity Features</b></summary>
+
+- **i3 Window Manager**
+  - Intuitive vim-like keybindings
+  - Multi-monitor support with workspace management
+  - Auto-launching of essential services
+  - Multiple application launcher options (rofi, fuzzel, wofi)
+
+- **Polybar Status Bar**
+  - Interactive modules for system control
+  - Real-time monitoring (CPU, memory, GPU, battery, network)
+  - Audio and microphone controls with click actions
+  - Notification management integration
+
+- **Neovim Editor**
+  - Optimized startup time with lazy loading
+  - LSP integration for multiple languages
+  - Fuzzy finding and file management
+  - Integrated terminal and Git support
+
+- **Fish Shell**
+  - 100+ useful aliases and abbreviations
+  - Smart command completion and history
+  - Custom functions for common tasks
+  - Enhanced navigation and file operations
+
+</details>
+
+<details>
+<summary><b>System Integration</b></summary>
+
+- **Audio Management**: PulseAudio integration with visual controls
+- **Notification System**: Dunst with pause/resume functionality  
+- **Screen Locking**: Multiple i3lock themes (simple and advanced)
+- **Display Management**: Multi-monitor setup scripts
+- **File Operations**: Enhanced archive extraction and file utilities
+- **Git Integration**: Status in prompt and editor workflows
+- **Theme Consistency**: Dark theme applied system-wide
+
+</details>
 
 ## Requirements
 
-### Core Components
-- i3-wm
-- polybar 
-- i3lock-color (or i3lock for basic functionality)
-- neovim (>= 0.9.0)
-- fish
-- git
+<details>
+<summary><b>Core Components</b></summary>
 
-### System Utilities
-- kitty (terminal emulator)
-- dmenu (application launcher)
-- fastfetch (system info display)
-- feh (wallpaper management)
-- dunst (notification daemon)
-- flameshot (screenshots)
-- xrandr (display configuration)
-- pulseaudio + pactl (audio system)
-- imagemagick (i3lock effects)
+- `i3-wm` - Window manager
+- `polybar` - Status bar
+- `i3lock-color` - Screen locker (or i3lock for basic functionality)
+- `neovim` (>= 0.9.0) - Text editor
+- `fish` - Shell
+- `git` - Version control
 
-### Development & Shell Tools
-- ripgrep (fast text search)
-- nodejs + npm (LSP servers)
-- curl + wget (downloads)
-- xdg-utils (URL handling)
-- p7zip + unrar (archive support)
-- yt-dlp (video downloads)
-- intel-gpu-tools (GPU monitoring, Intel only)
+</details>
 
-### Fonts
+<details>
+<summary><b>System Utilities</b></summary>
+
+- `kitty` - Terminal emulator
+- `rofi`/`fuzzel`/`wofi` - Application launchers
+- `fastfetch` - System info display
+- `feh` - Wallpaper management
+- `dunst` - Notification daemon
+- `flameshot` - Screenshots
+- `xrandr` - Display configuration
+- `pulseaudio` + `pactl` - Audio system
+- `imagemagick` - i3lock effects
+
+</details>
+
+<details>
+<summary><b>Development & Shell Tools</b></summary>
+
+- `ripgrep` - Fast text search
+- `nodejs` + `npm` - LSP servers
+- `curl` + `wget` - Downloads
+- `xdg-utils` - URL handling
+- `p7zip` + `unrar` - Archive support
+- `yt-dlp` - Video downloads
+- `intel-gpu-tools` - GPU monitoring (Intel only)
+
+</details>
+
+<details>
+<summary><b>Fonts</b></summary>
+
 - Iosevka Nerd Font (primary)
 - Any Nerd Font compatible font
 
+</details>
+
 ## Installation
 
-### Arch Linux / CachyOS
+<details>
+<summary><b>Arch Linux / CachyOS</b></summary>
+
 ```bash
 # Essential packages
-sudo pacman -S i3-wm polybar i3lock-color neovim fish git kitty fish dmenu feh dunst flameshot xorg-xrandr pulseaudio fastfetch imagemagick intel-gpu-tools ripgrep nodejs npm curl wget xdg-utils p7zip unrar yt-dlp
+sudo pacman -S i3-wm polybar i3lock-color neovim fish git kitty fish dmenu feh \
+  dunst flameshot xorg-xrandr pulseaudio fastfetch imagemagick intel-gpu-tools \
+  ripgrep nodejs npm curl wget xdg-utils p7zip unrar yt-dlp
 
 # Fonts (AUR)
 yay -S ttf-iosevka-nerd
 ```
 
-### Ubuntu/Debian
+</details>
+
+<details>
+<summary><b>Ubuntu/Debian</b></summary>
+
 ```bash
 # Essential packages
 sudo apt update
-sudo apt install i3 polybar i3lock neovim fish git kitty dmenu feh dunst flameshot x11-xserver-utils pulseaudio fastfetch imagemagick intel-gpu-tools ripgrep nodejs npm curl wget xdg-utils p7zip-full unrar-free yt-dlp
+sudo apt install i3 polybar i3lock neovim fish git kitty dmenu feh dunst \
+  flameshot x11-xserver-utils pulseaudio fastfetch imagemagick intel-gpu-tools \
+  ripgrep nodejs npm curl wget xdg-utils p7zip-full unrar-free yt-dlp
 
 # Note: Install Nerd Fonts manually or via package manager if available
 ```
 
-### Fedora
+</details>
+
+<details>
+<summary><b>Fedora</b></summary>
+
 ```bash
 # Essential packages
-sudo dnf install i3 polybar i3lock neovim fish git kitty dmenu feh dunst flameshot xrandr pulseaudio fastfetch ImageMagick intel-gpu-tools ripgrep nodejs npm curl wget xdg-utils p7zip unrar yt-dlp
+sudo dnf install i3 polybar i3lock neovim fish git kitty dmenu feh dunst \
+  flameshot xrandr pulseaudio fastfetch ImageMagick intel-gpu-tools \
+  ripgrep nodejs npm curl wget xdg-utils p7zip unrar yt-dlp
 ```
+
+</details>
 
 ## Setup
 
@@ -122,27 +211,49 @@ Each component can be customized by editing its respective configuration files:
 | **Neovim** | `config/nvim/init.lua` | Plugin management and core configuration |
 | **Fish** | `config/fish/config.fish` | Aliases, functions, prompt customization |
 
-## Key Mappings
+## Keybindings
 
-### i3 Window Manager
+<details>
+<summary><b>i3 Window Manager</b></summary>
+
 | Key Combination | Action |
 |-----------------|--------|
 | `Super + Return` | Open terminal (kitty) |
-| `Super + d` | Open dmenu application launcher |
+| `Super + d` | Open rofi application launcher |
+| `Super + Shift + f` | Open fuzzel launcher |
+| `Super + Ctrl + d` | Open wofi launcher |
+| `Super + p` | Open rofi run menu |
+| `Super + Ctrl + w` | Open rofi window switcher |
+| `Super + m` | Open launcher menu script |
 | `Super + q` | Close focused window |
-| `Super + h/j/k/l` | Navigate windows |
-| `Super + Shift + h/j/k/l` | Move windows |
-| `Super + 1-9` | Switch to workspace |
-| `Super + Shift + 1-9` | Move window to workspace |
+| `Super + j/k/l/;` | Navigate windows (vim-like) |
+| `Super + Arrow keys` | Navigate windows (arrow keys) |
+| `Super + Shift + j/k/l/;` | Move windows (vim-like) |
+| `Super + Shift + Arrow keys` | Move windows (arrow keys) |
+| `Super + 1-9/0` | Switch to workspace |
+| `Super + Shift + 1-9/0` | Move window to workspace |
+| `Super + h` | Split horizontal |
+| `Super + v` | Split vertical |
 | `Super + f` | Toggle fullscreen |
-| `Super + Shift + r` | Reload i3 configuration |
-| `Super + Shift + l` | Lock screen (i3lock) |
 | `Super + w` | Toggle polybar visibility |
+| `Super + e` | Toggle split layout |
+| `Super + Shift + space` | Toggle floating |
+| `Super + space` | Toggle focus (tiling/floating) |
+| `Super + a` | Focus parent container |
+| `Super + r` | Enter resize mode |
+| `Super + Shift + c` | Reload configuration |
+| `Super + Shift + r` | Restart i3 |
+| `Super + Shift + e` | Exit i3 |
+| `Super + Shift + l` | Lock screen (simple) |
 | `Super + z` | Open zen-browser |
 | `Super + Shift + d` | Open vesktop (Discord) |
 | `Print` | Take screenshot (flameshot) |
 
-### Neovim
+</details>
+
+<details>
+<summary><b>Neovim</b></summary>
+
 | Key Combination | Action |
 |-----------------|--------|
 | `Space` | Leader key |
@@ -158,7 +269,11 @@ Each component can be customized by editing its respective configuration files:
 | `Ctrl + h/j/k/l` | Navigate windows |
 | `Alt + 1-9` | Go to buffer by number |
 
-### Fish Shell Aliases
+</details>
+
+<details>
+<summary><b>Fish Shell Aliases</b></summary>
+
 | Alias | Command | Description |
 |-------|---------|-------------|
 | `ll` | `ls -la` | Detailed file listing |
@@ -174,7 +289,11 @@ Each component can be customized by editing its respective configuration files:
 | `dv` | `yt-dlp --no-playlist` | Download video |
 | `done` | `git add . && git commit && git push` | Quick commit and push |
 
-### Fish Shell Functions
+</details>
+
+<details>
+<summary><b>Fish Shell Functions</b></summary>
+
 | Function | Description |
 |----------|-------------|
 | `extract <file>` | Extract any archive format |
@@ -182,19 +301,29 @@ Each component can be customized by editing its respective configuration files:
 | `psg <process>` | Search running processes |
 | `weather [city]` | Get weather information |
 
+</details>
+
 ## Project Structure
 
 ```
 cg-i3dotfiles/
 ├── install                    # Installation script
-├── README.md                  # This file
+├── README.md                  # This documentation
 └── config/
     ├── fish/                  # Fish shell configuration
     │   ├── config.fish       # Main fish config with aliases and functions
     │   ├── conf.d/           # Additional fish configurations
+    │   │   ├── deno.fish     # Deno environment setup
+    │   │   └── rustup.fish   # Rust toolchain setup
+    │   ├── fish_variables    # Fish shell variables
+    │   ├── cg-fish.png       # Fish shell screenshot
     │   └── README.md         # Fish-specific documentation
-    ├── i3/
-    │   └── config            # i3 window manager configuration
+    ├── fuzzel/               # Fuzzel wayland launcher
+    │   └── fuzzel.ini        # Fuzzel configuration
+    ├── i3/                   # i3 window manager configuration
+    │   ├── config            # Main i3 configuration
+    │   ├── launcher-menu.sh  # Custom launcher menu script
+    │   └── set-dark-theme.sh # Dark theme setup script
     ├── i3lock/               # Screen lock configurations
     │   ├── theme.conf        # Theme settings for advanced lock
     │   ├── lock-simple.sh    # Simple lock script
@@ -204,14 +333,25 @@ cg-i3dotfiles/
     │   ├── init.lua          # Main Neovim configuration
     │   ├── lua/config/       # Core configuration modules
     │   ├── lua/plugins/      # Plugin configurations
+    │   ├── LICENSE           # Neovim config license
     │   └── README.md         # Detailed Neovim documentation
-    └── polybar/              # Polybar status bar
-        ├── config.ini        # Main polybar configuration
-        ├── scripts/          # Custom polybar scripts
-        ├── launch_polybar.sh # Polybar startup script
-        ├── mic-input.sh      # Microphone status script
-        ├── mic-volume.sh     # Microphone volume script
-        └── README.md         # Polybar-specific documentation
+    ├── polybar/              # Polybar status bar
+    │   ├── config.ini        # Main polybar configuration
+    │   ├── scripts/          # Custom polybar scripts
+    │   │   └── intel-gpu-usage.sh # Intel GPU monitoring script
+    │   ├── launch_polybar.sh # Polybar startup script
+    │   ├── start_polybar.sh  # Alternative startup script
+    │   ├── kill_polybar.sh   # Kill polybar processes
+    │   ├── toggle_polybar.sh # Toggle polybar visibility
+    │   ├── mic-input.sh      # Microphone status script
+    │   ├── mic-volume.sh     # Microphone volume script
+    │   ├── cg-polybar*.png   # Polybar screenshots
+    │   └── README.md         # Polybar-specific documentation
+    ├── rofi/                 # Rofi application launcher
+    │   └── config.rasi       # Rofi configuration and styling
+    └── wofi/                 # Wofi wayland launcher
+        ├── config            # Wofi configuration
+        └── style.css         # Wofi styling
 ```
 
 ## Polybar Modules
