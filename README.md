@@ -148,7 +148,7 @@ sudo pacman -S i3-wm polybar i3lock-color neovim fish git kitty fish dmenu feh \
   dunst flameshot xorg-xrandr pulseaudio fastfetch imagemagick intel-gpu-tools \
   ripgrep nodejs npm curl wget xdg-utils p7zip unrar yt-dlp
 
-# Fonts (AUR)
+# packages (AUR)
 yay -S ttf-iosevka-nerd
 paru -S boomer
 ```
@@ -223,7 +223,7 @@ Each component can be customized by editing its respective configuration files:
 | `Super + Return` | Open terminal (kitty) |
 | `Super + d` | Open rofi application launcher |
 | `Super + Shift + f` | Open fuzzel launcher |
-| Super + b | open `bommer` zoomer application |
+| `Super + b` | open `bommer` zoomer application |
 | `Super + Ctrl + d` | Open wofi launcher |
 | `Super + p` | Open rofi run menu |
 | `Super + Ctrl + w` | Open rofi window switcher |
