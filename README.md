@@ -111,7 +111,7 @@ A carefully crafted desktop environment configuration for Linux featuring i3 win
 - `flameshot` - Screenshots
 - `xrandr` - Display configuration
 - `pulseaudio` + `pactl` - Audio system
-- `imagemagick` - i3lock effects
+- `imagemagick` - `i3lock` effects
 
 </details>
 
@@ -125,6 +125,7 @@ A carefully crafted desktop environment configuration for Linux featuring i3 win
 - `p7zip` + `unrar` - Archive support
 - `yt-dlp` - Video downloads
 - `intel-gpu-tools` - GPU monitoring (Intel only)
+- `boomer` - `Zoomer` application for Linux
 
 </details>
 
@@ -149,6 +150,7 @@ sudo pacman -S i3-wm polybar i3lock-color neovim fish git kitty fish dmenu feh \
 
 # Fonts (AUR)
 yay -S ttf-iosevka-nerd
+paru -S boomer
 ```
 
 </details>
@@ -163,7 +165,7 @@ sudo apt install i3 polybar i3lock neovim fish git kitty dmenu feh dunst \
   flameshot x11-xserver-utils pulseaudio fastfetch imagemagick intel-gpu-tools \
   ripgrep nodejs npm curl wget xdg-utils p7zip-full unrar-free yt-dlp
 
-# Note: Install Nerd Fonts manually or via package manager if available
+# NOTE: Install Nerd Fonts and boomer manually or via package manager if available
 ```
 
 </details>
@@ -221,6 +223,7 @@ Each component can be customized by editing its respective configuration files:
 | `Super + Return` | Open terminal (kitty) |
 | `Super + d` | Open rofi application launcher |
 | `Super + Shift + f` | Open fuzzel launcher |
+| Super + b | open `bommer` zoomer application |
 | `Super + Ctrl + d` | Open wofi launcher |
 | `Super + p` | Open rofi run menu |
 | `Super + Ctrl + w` | Open rofi window switcher |
