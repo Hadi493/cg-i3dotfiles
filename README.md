@@ -396,6 +396,43 @@ cg-i3dotfiles/
 - Some applications (zen-browser, vesktop) are optional and referred in keybindings
 - The configuration assumes a wallpaper at `~/Pictures/Wallpapers/dark-city.jpg`
 
+## Contributing
+
+Contributions are welcome! If you have improvements, bug fixes, or new features to add:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and test them thoroughly
+4. **Commit your changes**: `git commit -m 'Add amazing feature'`
+5. **Push to the branch**: `git push origin feature/amazing-feature`
+6. **Open a Pull Request**
+
+### Contribution Guidelines
+
+- **Code Style**: Follow existing patterns and conventions
+- **Documentation**: Update README.md if you add new features or change functionality
+- **Testing**: Test your changes on your system before submitting
+- **Scope**: Keep changes focused and atomic
+
+### Areas for Contribution
+
+- **Theme variants**: Additional color schemes or themes
+- **Platform support**: Configurations for other Linux distributions
+- **New modules**: Additional Polybar modules or scripts
+- **Documentation**: Improvements to setup guides or troubleshooting
+- **Bug fixes**: Fixes for compatibility issues or configuration errors
+
+## Issues and Support
+
+If you encounter any problems or have questions:
+
+- **Check existing issues** on GitHub before creating a new one
+- **Include system information** (distribution, DE version, etc.)
+- **Provide configuration details** and error messages
+- **Search the documentation** for common solutions
+
 ## License
 
-This configuration is provided as-is for personal use and modification.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Summary**: You are free to use, modify, and distribute this configuration. Attribution is appreciated but not required.
