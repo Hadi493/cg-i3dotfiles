@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-linux-blue?style=for-the-badge&logo=linux)]()
 
-[Features](#features) • [Screenshots](#screenshots) • [Installation](#installation) • [Configuration](#configuration) • [Keybindings](#keybindings)
+[Features](#features) • [Screenshots](./screenshots/) • [Installation](#installation) • [Configuration](#configuration) • [Keybindings](#keybindings)
 
 </div>
 
@@ -22,13 +22,13 @@ A carefully crafted desktop environment configuration for Linux featuring i3 win
 ## Screenshots
 
 <details>
-<summary>Polybar & Desktop</summary>
-<img src="config/polybar/cg-polybarv1.3.2.png" alt="Polybar Screenshot">
+<summary>Desktop View 1</summary>
+<img src="screenshots/desktop-1.png" alt="Desktop Screenshot 1">
 </details>
 
 <details>
-<summary>Fish Shell</summary>
-<img src="config/fish/cg-fish.png" alt="Fish Shell Screenshot">
+<summary>Desktop View 2</summary>
+<img src="screenshots/desktop-2.png" alt="Desktop Screenshot 2">
 </details>
 
 ## Features
