@@ -41,7 +41,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # apps
-bindsym $mod+z exec zen-browser
+bindsym $mod+z exec firefox
 bindsym $mod+Shift+d exec vesktop
 
 # scrot
