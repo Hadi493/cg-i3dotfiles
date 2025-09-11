@@ -1,18 +1,9 @@
 #!/bin/bash
 
-# Check if polybar is already running
-if pgrep -x polybar > /dev/null; then
-    echo "Polybar is already running"
-    exit 1
-fi
+killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch polybar
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload toph &
-  done
-else
-  polybar --reload toph &
-fi
+PRIMARY_MONITOR=$(xrandr --query | grep " primary" | cut -d" " -f1)
+MONITOR=$PRIMARY_MONITOR polybar --reload toph &
 
-echo "Polybar started..."
+echo "Polybar launched on $PRIMARY_MONITOR..."
