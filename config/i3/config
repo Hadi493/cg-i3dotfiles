@@ -136,8 +136,15 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/dark-city.jpg
+
+# wallpaper 
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/collection-1/b-216.jpg
+
+
+# picom
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Load dark theme settings
 exec_always --no-startup-id xrdb -merge ~/.Xresources

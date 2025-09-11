@@ -12,6 +12,11 @@ echo "🔗 Linking polybar config..."
 mkdir -p ~/.config/polybar
 ln -sf "$HOME/cg-i3dotfiles/config/polybar/"* ~/.config/polybar/
 
+# picom config
+echo "🔗 Linking picom config..."
+mkdir -p ~/.config/picom
+ln -sf "$HOME/cg-i3dotfiles/config/picom/"* ~/.config/picom/
+
 # app launcher config
 echo "🔗 Linking rofi config..."
 mkdir -p ~/.config/rofi
