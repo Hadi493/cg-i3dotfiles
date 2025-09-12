@@ -39,7 +39,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+t exec kitty nmtui
+for_window [class="kitty"] floating enable, resize set 80 ppt 80 ppt, move position center
+bindsym $mod+n exec kitty nmtui
+for_window [class="kitty" title="nmtui"] floating enable, resize set 80 ppt 80 ppt, move position center
+
 
 # apps
 bindsym $mod+z exec firefox
