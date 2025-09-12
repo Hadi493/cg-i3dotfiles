@@ -28,7 +28,7 @@ A carefully crafted desktop environment configuration for Linux featuring i3 win
 
 <details>
 <summary>Desktop View 2</summary>
-<img src="./config/polybar/i3.personal.test.png" alt="Desktop Screenshot 2">
+<img src="./screenshots/void-i3.png" alt="Desktop Screenshot 2">
 </details>
 
 ## Features
