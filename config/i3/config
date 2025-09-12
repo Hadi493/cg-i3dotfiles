@@ -13,6 +13,8 @@ set $mod Mod4
 
 
 set $menu --no-startup-id qdbus6 org.kde.krunner /App display
+
+# screenshot
 bindsym Print exec flameshot gui
 
 
@@ -144,7 +146,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # wallpaper 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/collection-1/b-216.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/nature-collections/gorge-wallpaper.jpg
 
 
 # picom
@@ -201,6 +203,7 @@ bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
 bindsym $mod+Shift+w exec "~/bin/map-wacom"
 bindsym $mod+b exec "~/.config/boomer/boomer"
 bindsym --release $mod+Shift+l exec ~/.config/i3lock/lock-simple.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock/lock-simple.sh
 
 focus_follows_mouse yes
 
