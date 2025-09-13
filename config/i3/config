@@ -41,7 +41,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # apps
-bindsym $mod+z exec firefox
+bindsym $mod+b exec firefox
 bindsym $mod+Shift+d exec vesktop
 
 # scrot
@@ -195,7 +195,7 @@ bindsym Mod1+F1 exec "~/bin/hhkb-i3"
 bindsym $mod+Shift+h exec "~/.screenlayout/home-setup.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/portable-setup.sh"
 bindsym $mod+Shift+w exec "~/bin/map-wacom"
-bindsym $mod+b exec "boomer"
+bindsym $mod+z exec "boomer"
 bindsym --release $mod+Shift+l exec ~/.config/i3lock/lock-simple.sh
 
 focus_follows_mouse yes
