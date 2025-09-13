@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # exit on error
+set -e # exit on error
 
 # i3 config
 echo "🔗 Linking i3 config..."
@@ -31,6 +31,7 @@ ln -sf "$HOME/cg-i3dotfiles/config/i3lock/"* ~/.config/i3lock/
 echo "🔗 Linking fish config..."
 mkdir -p ~/.config/fish
 ln -sf "$HOME/cg-i3dotfiles/config/fish/"* ~/.config/fish
+source ~/.config/fish/config.fish
 
 # kitty config
 echo "🔗 Linking kitty config..."

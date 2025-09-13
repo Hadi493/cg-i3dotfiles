@@ -72,14 +72,14 @@ set -g fish_save_timestamp 1
 fish_default_key_bindings
 
 # Enhanced navigation
-bind \e\[1\;5C forward-word  # Ctrl+Right
+bind \e\[1\;5C forward-word # Ctrl+Right
 bind \e\[1\;5D backward-word # Ctrl+Left
-bind \cH backward-kill-word  # Ctrl+Backspace
-bind \e\[3\;5~ kill-word     # Ctrl+Delete
+bind \cH backward-kill-word # Ctrl+Backspace
+bind \e\[3\;5~ kill-word # Ctrl+Delete
 
 # History search with arrow keys
-bind \e\[A history-search-backward  # Up arrow
-bind \e\[B history-search-forward   # Down arrow
+bind \e\[A history-search-backward # Up arrow
+bind \e\[B history-search-forward # Down arrow
 
 # ===============================================
 # FUNCTIONS FOR ENHANCED EXPERIENCE
@@ -114,14 +114,14 @@ function extract --description="Extract various archive formats"
         echo "Usage: extract <archive>"
         return 1
     end
-    
+
     set -l file $argv[1]
-    
+
     if not test -f $file
         echo "Error: '$file' is not a valid file"
         return 1
     end
-    
+
     switch $file
         case '*.tar.bz2'
             tar xjf $file
@@ -189,11 +189,12 @@ alias l="ls -CF"
 alias cls="clear"
 alias c="clear"
 alias toc="touch"
-alias md="mkdir -pv"  # Create parent directories and be verbose
-alias cp="cp -i"         # Interactive copy
-alias mv="mv -i"         # Interactive move
-alias rm="rm -i"         # Interactive remove
+alias md="mkdir -pv" # Create parent directories and be verbose
+alias cp="cp -i" # Interactive copy
+alias mv="mv -i" # Interactive move
+alias rm="rm -i" # Interactive remove
 alias logout="hyprctl dispatch exit"
+alias cat="bat"
 
 # yt-dlp
 alias dv="yt-dlp --no-playlist"
@@ -220,15 +221,15 @@ alias g_graph="git log --graph --pretty=format:'%C(auto)%h%d %s %C(blue)</%an>' 
 alias gb_graph="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(dim white)%an%C(reset) %C(bold yellow)%d%C(reset)%n''%C(white)%s%C(reset)' --date=short"
 
 # System monitoring
-alias htop="htop -C"     # Colorized htop
-alias df="df -h"         # Human readable disk usage
-alias du="du -h"         # Human readable directory usage
-alias free="free -h"     # Human readable memory usage
-alias ps="ps auxf"       # Full process list
+alias htop="htop -C" # Colorized htop
+alias df="df -h" # Human readable disk usage
+alias du="du -h" # Human readable directory usage
+alias free="free -h" # Human readable memory usage
+alias ps="ps auxf" # Full process list
 
 # Network
-alias ping="ping -c 5"   # Ping 5 times by default
-alias wget="wget -c"     # Continue partial downloads
+alias ping="ping -c 5" # Ping 5 times by default
+alias wget="wget -c" # Continue partial downloads
 
 # Safety aliases
 alias chown="chown --preserve-root"
@@ -281,7 +282,7 @@ function fish_prompt
         set -l git_status (git status --porcelain 2>/dev/null)
         set_color ff87d7
         echo -n " git:($git_branch"
-        
+
         # Show git status indicators
         if test -n "$git_status"
             set_color yellow
@@ -290,13 +291,13 @@ function fish_prompt
         set_color ff87d7
         echo -n ")"
     end
-    
+
     # Show exit status if non-zero
     if test $last_status -ne 0
         set_color red
         echo -n " [$last_status]"
     end
-    
+
     echo
     echo -n "╰─"
     set_color 00ffaf
@@ -308,14 +309,14 @@ end
 function fish_right_prompt
     set -l cmd_duration $CMD_DURATION
     set -l timestamp (date "+%H:%M:%S")
-    
+
     # Show command duration if > 2 seconds
     if test $cmd_duration -gt 2000
         set -l duration_seconds (math "$cmd_duration / 1000")
         set_color yellow
         echo -n "⏱ {$duration_seconds}s "
     end
-    
+
     # Show current time
     set_color 666666
     echo -n "$timestamp"
@@ -351,5 +352,5 @@ function launch_emacs
 end
 
 # Bind Ctrl+Shift+E to launch Emacs with current command line as filename
-bind \e\[69\;6u 'launch_emacs'
+bind \e\[69\;6u launch_emacs
 set -gx PATH /home/cg/.deno/bin $PATH
