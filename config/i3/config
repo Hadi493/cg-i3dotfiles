@@ -198,6 +198,6 @@ bindsym $mod+Shift+w exec "~/bin/map-wacom"
 bindsym $mod+b exec "boomer"
 bindsym --release $mod+Shift+l exec ~/.config/i3lock/lock-simple.sh
 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 hide_edge_borders both
