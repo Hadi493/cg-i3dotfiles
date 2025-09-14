@@ -267,6 +267,27 @@ alias xbps-files="xbps-query -f"
 # Find which package owns a file
 alias xbps-owner="xbps-query -o"
 
+# Search for a string in files recursively (case-insensitive)
+alias grep-rec="grep -Ri"
+
+# Search for a string in a single file (with line numbers)
+alias grep-l="grep -n"
+
+# Search and highlight the match in color
+alias grep-color="grep --color=auto"
+
+# Search only for whole words
+alias grep-word="grep -w"
+
+# Count the number of matches
+alias grep-count="grep -c"
+
+# Show lines before/after match (context)
+alias grep-context="grep -C 3"
+
+# Combine recursive + color + line numbers
+alias grep-all="grep -Rin --color=auto"
+
 set -g os_name (string replace 'NAME=' '' (grep '^NAME=' /etc/os-release) | string trim --chars='"')
 
 # ===============================================
