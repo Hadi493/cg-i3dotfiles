@@ -197,7 +197,7 @@ alias logout="hyprctl dispatch exit"
 alias cat="bat"
 
 # yt-dlp
-alias dv="yt-dlp --no-playlist"
+alias dv "yt-dlp --no-playlist -f 'bestvideo+bestaudio/best' --cookies-from-browser firefox"
 
 # boomer for zoomer
 alias boomer="~/.config/boomer/boomer"
