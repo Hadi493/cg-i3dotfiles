@@ -240,6 +240,9 @@ alias chgrp="chgrp --preserve-root"
 
 # Custom Aliases
 
+# set wallpaper
+alias set-wallpaper="feh --bg-fill"
+
 # Update repository index and upgrade system
 alias sys-upgrade="sudo xbps-install -Suv"
 
