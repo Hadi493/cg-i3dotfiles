@@ -140,7 +140,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # wallpaper 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/collection-1/b-216.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/nature-collections/norway_in_the_summer-wallpaper.jpg
 
 
 # picom
