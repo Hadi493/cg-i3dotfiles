@@ -199,6 +199,9 @@ alias cat="bat"
 # yt-dlp
 alias dv="yt-dlp --no-playlist"
 
+# boomer for zoomer
+alias boomer="~/.config/boomer/boomer"
+
 # Editor aliases
 alias nv="nvim"
 alias hx="helix"
