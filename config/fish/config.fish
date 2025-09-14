@@ -61,10 +61,6 @@ set -g fish_history_max 10000
 # Save timestamp in history
 set -g fish_save_timestamp 1
 
-# ===============================================
-# KEY BINDINGS FOR BETTER UX
-# ===============================================
-
 # Vi mode (optional - uncomment if you prefer vi keybindings)
 # fish_vi_key_bindings
 
@@ -80,10 +76,6 @@ bind \e\[3\;5~ kill-word # Ctrl+Delete
 # History search with arrow keys
 bind \e\[A history-search-backward # Up arrow
 bind \e\[B history-search-forward # Down arrow
-
-# ===============================================
-# FUNCTIONS FOR ENHANCED EXPERIENCE
-# ===============================================
 
 # Enhanced ls with colors
 function ls --wraps=ls --description="Enhanced ls with colors"
@@ -178,10 +170,6 @@ set -x GTK_THEME Adwaita:dark
 # Add ~/.local/bin to PATH
 set -gx PATH $HOME/.local/bin $PATH
 
-# ===============================================
-# ENHANCED ALIASES
-# ===============================================
-
 # Basic file operations
 alias ll="ls -la"
 alias la="ls -a"
@@ -193,8 +181,16 @@ alias md="mkdir -pv" # Create parent directories and be verbose
 alias cp="cp -i" # Interactive copy
 alias mv="mv -i" # Interactive move
 alias rm="rm -i" # Interactive remove
-alias logout="hyprctl dispatch exit"
 alias cat="bat"
+
+# Logout from i3
+alias logout="i3-msg exit"
+
+# Restart i3 (without logging out)
+alias i3-restart="i3-msg restart"
+
+# Reload i3 config
+alias i3-reload="i3-msg reload"
 
 # yt-dlp
 alias dv="yt-dlp --no-playlist -f \"bestvideo+bestaudio\" --cookies-from-browser firefox"
@@ -243,11 +239,18 @@ alias chmod="chmod --preserve-root"
 alias chgrp="chgrp --preserve-root"
 
 # Custom Aliases
-alias sys-upgrade="sudo pacman -Sy && sudo pacman -Syu -y"
-alias sym-upgrade="sudo pacman -Syyu"
-alias full-sys-upgrade="sudo pacman -Sy && sudo pacman -Syu -y && paru -Sy && paru -Syu -y && yay -Sy && yay -Syu -y"
-alias pacman="sudo pacman"
-alias set-wallpaper="feh --bg-fill"
+
+# Update repository index and upgrade system
+alias sys-upgrade="sudo xbps-install -Suv"
+
+# Force update repository index and upgrade system
+alias sym-upgrade="sudo xbps-install -Syyuv"
+
+# Full system upgrade including 3rd party repos (Void doesn’t really have yay/paru, so just xbps)
+alias full-sys-upgrade="sudo xbps-install -Suv"
+
+# Install a package
+alias xbps-iy="sudo xbps-install -y"
 
 set -g os_name (string replace 'NAME=' '' (grep '^NAME=' /etc/os-release) | string trim --chars='"')
 
