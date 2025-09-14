@@ -1,3 +1,4 @@
+<span style="font-family: 'Iosevka', monospace;">
 > [!NOTE]  
 > The `main` branch is configured specifically for Void Linux.
 > check out the `./basic-deps.txt`
@@ -440,3 +441,6 @@ If you encounter any problems or have questions:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 **Summary**: You are free to use, modify, and distribute this configuration. Attribution is appreciated but not required.
+</span>
+
+
