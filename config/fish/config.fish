@@ -197,7 +197,10 @@ alias logout="hyprctl dispatch exit"
 alias cat="bat"
 
 # yt-dlp
-alias dv "yt-dlp --no-playlist -f 'bestvideo+bestaudio/best' --cookies-from-browser firefox"
+alias dv="yt-dlp --no-playlist -f \"bestvideo+bestaudio\" --cookies-from-browser firefox"
+
+# check video quality
+alias vqc="ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0"
 
 # boomer for zoomer
 alias boomer="~/.config/boomer/boomer"
