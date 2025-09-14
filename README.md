@@ -4,6 +4,9 @@
 
 *A complete, unified desktop environment for productivity enthusiasts*
 
+> [!NOTE]  
+> The `main` branch is configured specifically for Void Linux.
+
 [![GitHub Stars](https://img.shields.io/github/stars/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/network)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
