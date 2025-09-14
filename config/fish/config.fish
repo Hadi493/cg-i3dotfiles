@@ -252,6 +252,21 @@ alias full-sys-upgrade="sudo xbps-install -Suv"
 # Install a package
 alias xbps-iy="sudo xbps-install -y"
 
+# Search for a package by name or description
+alias xbps-search="xbps-query -Rs"
+
+# Show info about an installed package
+alias xbps-info="xbps-query -R"
+
+# List all installed packages
+alias xbps-list="xbps-query -l"
+
+# List files installed by a package
+alias xbps-files="xbps-query -f"
+
+# Find which package owns a file
+alias xbps-owner="xbps-query -o"
+
 set -g os_name (string replace 'NAME=' '' (grep '^NAME=' /etc/os-release) | string trim --chars='"')
 
 # ===============================================
