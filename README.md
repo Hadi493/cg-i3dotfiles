@@ -1,7 +1,8 @@
-<span style="font-family: 'Iosevka', monospace;">
 > [!NOTE]  
 > The `main` branch is configured specifically for Void Linux.
 > check out the `./basic-deps.txt`
+
+<span style="font-family: 'Iosevka', monospace;">
 
 <div align="center">
 
