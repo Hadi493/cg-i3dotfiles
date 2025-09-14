@@ -400,7 +400,7 @@ cg-i3dotfiles/
 - Fish shell aliases include Arch-specific package management commands
 - Intel GPU monitoring requires Intel graphics hardware and intel-gpu-tools
 - Some applications (zen-browser, vesktop) are optional and referred in keybindings
-- The configuration assumes a wallpaper at `~/Pictures/Wallpapers/dark-city.jpg`
+- The configuration assumes a wallpaper at `~/Pictures/wallpapers/nature-collections/norway_in_the_summer-wallpaper.jpg`
 
 ## Contributing
 
