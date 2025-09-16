@@ -1,27 +1,10 @@
-<div align="center">
-
-# CG i3 Dotfiles
-
-*A complete, unified desktop environment for productivity enthusiasts*
-
-[![GitHub Stars](https://img.shields.io/github/stars/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/cyber-green/cg-i3dotfiles?style=for-the-badge&logo=github)](https://github.com/cyber-green/cg-i3dotfiles/network)
-[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-linux-blue?style=for-the-badge&logo=linux)]()
-
-[Features](#features) • [Screenshots](./screenshots/) • [Installation](#installation) • [Configuration](#configuration) • [Keybindings](#keybindings)
-
-</div>
-
----
-
-## Overview
-
-A carefully crafted desktop environment configuration for Linux featuring i3 window manager, Polybar status bar, Neovim editor, i3lock screen locker, and Fish shell. All components work together with a consistent **Catppuccin Mocha** theme for a cohesive and productive workflow.
+> [!Note]
+> This Branch is only for me. SO noods don't touch it.
 
 ## Screenshots
 
 <details>
+<<<<<<< HEAD
 <summary>Desktop View</summary>
 <img src="./screenshots/void-i3.png" alt="Desktop Screenshot 1">
 </details>
@@ -431,3 +414,9 @@ If you encounter any problems or have questions:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 **Summary**: You are free to use, modify, and distribute this configuration. Attribution is appreciated but not required.
+=======
+    <summary>new_polybar view </summary>
+    <img src="./screenshots/new_polybar.png" alt="Desktop Screenshot 1">
+</details>
+
+>>>>>>> main.dev.personal
