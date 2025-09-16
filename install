@@ -27,16 +27,16 @@ echo "🔗 Linking i3lock config..."
 mkdir -p ~/.config/i3lock
 ln -sf "$HOME/cg-i3dotfiles/config/i3lock/"* ~/.config/i3lock/
 
-# fish config
-# echo "🔗 Linking fish config..."
-# mkdir -p ~/.config/fish
-# ln -sf "$HOME/cg-i3dotfiles/config/fish/"* ~/.config/fish
-# source ~/.config/fish/config.fish
-#
-# kitty config
-# echo "🔗 Linking kitty config..."
-# mkdir -p ~/.config/kitty
-# ln -sf "$HOME/cg-i3dotfiles/config/kitty/"* ~/.config/kitty
+fish config
+echo "🔗 Linking fish config..."
+mkdir -p ~/.config/fish
+ln -sf "$HOME/cg-i3dotfiles/config/fish/"* ~/.config/fish
+source ~/.config/fish/config.fish
+
+kitty config
+echo "🔗 Linking kitty config..."
+mkdir -p ~/.config/kitty
+ln -sf "$HOME/cg-i3dotfiles/config/kitty/"* ~/.config/kitty
 
 # change shell
 chsh -s /bin/fish
@@ -49,3 +49,4 @@ chsh -s /bin/fish
 # ln -sf "$HOME/cg-i3dotfiles/config/nvim/"* ~/.config/nvim/
 
 echo "✅ All configs linked."
+echo "Press: Mod+Shift+R"
