@@ -241,7 +241,7 @@ alias chgrp="chgrp --preserve-root"
 # Custom Aliases
 
 # tmux -> (Zellij)
-alias Zellij="bash (curl -L zellij.dev/launch | psub) "
+# alias Zellij="bash (curl -L zellij.dev/launch | psub) "
 
 # set wallpaper
 alias set-wallpaper="feh --bg-fill"
