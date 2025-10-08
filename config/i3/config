@@ -48,7 +48,7 @@ bindsym $mod+n exec kitty nmtui
 
 # apps
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+d exec vesktop
+bindsym $mod+Shift+d exec discord
 
 # scrot
 # bindsym --release $mod+s exec scrot
